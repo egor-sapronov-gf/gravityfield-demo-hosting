@@ -1,71 +1,72 @@
-
-/* Стили layout'а */
-/* ... */
+/* Стили от Tailwind CSS и другие стили layout'а */
 
 /* Стили механики */
 .gf-mechanic {
-  background: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.popup-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 80%;
-  max-width: 500px;
+.burger-builder {
+    display: flex;
+    justify-content: space-between;
 }
 
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
+.ingredients {
+    display: flex;
+    flex-direction: column;
 }
 
-.spinBtn {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: #f00;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.ingredient {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.email-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.ingredient img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
 
-.email-form input {
-  margin-top: 10px;
-  padding: 5px;
-  width: 100%;
+.add-ingredient {
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.email-form button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  background: #00f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.burger-preview {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 300px;
+    width: 200px;
+    border: 1px solid #ccc;
+}
+
+.burger {
+    width: 100px;
+}
+
+.order-button {
+    display: block;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
 }

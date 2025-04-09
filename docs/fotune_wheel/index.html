@@ -3,75 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интернет-магазин электроники</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Ресторанная витрина</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100">
-
-    <!-- Шапка -->
-    <header class="bg-white shadow-lg py-6 px-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="font-bold text-xl tracking-wide">ELECTRO<span class="text-blue-500">SHOP</span></div>
-            <nav class="space-x-4">
-                <a href="#" class="hover:text-blue-500 transition">Главная</a>
-                <a href="#" class="hover:text-blue-500 transition">Товары</a>
-                <a href="#" class="hover:text-blue-500 transition">Контакты</a>
+<body>
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white shadow-lg py-6">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div>
+                <a href="#" class="text-3xl font-bold">🍔 Бургерная</a>
+            </div>
+            <nav>
+                <ul class="flex">
+                    <li class="mx-3"><a href="#">Меню</a></li>
+                    <li class="mx-3"><a href="#">О нас</a></li>
+                    <li class="mx-3"><a href="#">Контакты</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Товарная секция 1 -->
-    <section class="container mx-auto py-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-            <img src="https://via.placeholder.com/400" alt="Товар 1" class="w-full h-64 object-cover rounded-lg">
-            <div class="p-6">
-                <h2 class="font-bold text-2xl mb-2">Ноутбук</h2>
-                <p class="text-gray-700">Современный ноутбук для работы и развлечений.</p>
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-blue-500 font-bold text-xl">45 000 ₽</span>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Купить</button>
+    <!-- Products -->
+    <section class="py-10">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Популярные блюда</h2>
+            <div class="flex items-center justify-between">
+                <!-- Card 1 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-2xl">
+                        <img class="h-56 w-full object-cover" src="burger.jpg" alt="Бургер">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Бургер классический</h3>
+                            <p class="text-gray-600 mt-4">Сочная котлета, свежие овощи и наш фирменный соус.</p>
+                            <div class="mt-8">
+                                <button class="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-400">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-2xl">
+                        <img class="h-56 w-full object-cover" src="pizza.jpg" alt="Пицца">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Пицца маргарита</h3>
+                            <p class="text-gray-600 mt-4">Томаты, моцарелла, базилик, оливковое масло.</p>
+                            <div class="mt-8">
+                                <button class="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-400">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-2xl">
+                        <img class="h-56 w-full object-cover" src="salad.jpg" alt="Салат">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Салат Цезарь</h3>
+                            <p class="text-gray-600 mt-4">Куриное филе, сыр Пармезан, салат Романо, соус Цезарь.</p>
+                            <div class="mt-8">
+                                <button class="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-400">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Другие товары -->
     </section>
 
-    <!-- Товарная секция 2 -->
-    <!-- Структура аналогична предыдущей секции -->
-
-    <!-- Баннер -->
-    <section class="bg-blue-500 text-white py-12 px-4 text-center">
-        <h2 class="font-bold text-4xl mb-4">Не пропустите наши специальные предложения!</h2>
-        <p class="text-xl">Подпишитесь на рассылку и получайте самые выгодные предложения первыми.</p>
-        <button class="mt-4 bg-white text-blue-500 px-6 py-3 rounded hover:bg-gray-100 transition">Подписаться</button>
-    </section>
-
-    <!-- МЕХАНИКА: сюда вставится fortune_wheel как pop-up -->
-    <div class="gf-mechanic">
-      <div class="popup-overlay">
-        <div class="popup-content">
-          <div class="close-btn">X</div>
-          <h2 class="text-xl font-bold text-center mb-4">Испытай удачу!</h2>
-          <canvas id="wheelCanvas" width="300" height="300"></canvas>
-          <button class="spinBtn">Крутить колесо</button>
-          <form class="email-form">
-            <label for="email-input">Введите ваш email для получения скидки:</label>
-            <input type="email" id="email-input" required>
-            <button type="submit">Получить скидку</button>
-          </form>
+    <!-- Mechanic Inline -->
+    <section class="py-10 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="gf-mechanic">
+                <h2 class="title">Собери свой бургер!</h2>
+                <div class="burger-builder">
+                    <div class="ingredients">
+                        <div class="ingredient" data-ingredient="bun">
+                            <img src="bun.png" alt="Булка">
+                            <button class="add-ingredient">Добавить</button>
+                        </div>
+                        <div class="ingredient" data-ingredient="beef">
+                            <img src="beef.png" alt="Говядина">
+                            <button class="add-ingredient">Добавить</button>
+                        </div>
+                        <div class="ingredient" data-ingredient="cheese">
+                            <img src="cheese.png" alt="Сыр">
+                            <button class="add-ingredient">Добавить</button>
+                        </div>
+                    </div>
+                    <div class="burger-preview">
+                        <div class="burger">
+                            <!-- Здесь будут добавляться ингредиенты -->
+                        </div>
+                    </div>
+                </div>
+                <button class="order-button">Заказать бургер</button>
+            </div>
         </div>
-      </div>
-    </div>
+    </section>
 
-    <!-- Футер -->
-    <footer class="bg-white shadow-lg py-6 px-4 mt-12">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-gray-600">© 2022 ELECTROSHOP</div>
-            <nav class="space-x-4">
-                <a href="#" class="hover:text-blue-500 transition">Политика конфиденциальности</a>
-                <a href="#" class="hover:text-blue-500 transition">Условия использования</a>
-            </nav>
+    <!-- Banner -->
+    <section class="py-10">
+        <div class="container mx-auto px-6">
+            <div class="bg-red-500 text-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-2xl">
+                <div class="p-6">
+                    <h2 class="text-4xl font-bold text-center">Скидка 20% на все заказы!</h2>
+                    <p class="text-gray-200 mt-4 text-center">Используйте промокод "BURGER20" при оформлении заказа.</p>
+                    <div class="mt-8 text-center">
+                        <button class="px-4 py-2 bg-white text-red-500 text-sm font-medium rounded hover:bg-gray-200">Узнать больше</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="py-10">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Новые блюда</h2>
+            <div class="flex items-center justify-between">
+                <!-- Card 1 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-2xl">
+                        <img class="h-56 w-full object-cover" src="noodles.jpg" alt="Лапша">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Лапша удон</h3>
+                            <p class="text-gray-600 mt-4">Удон, куриное филе, овощи, соус терияки.</p>
+                            <div class="mt-8">
+                                <button class="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-400">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-2xl">
+                        <img class="h-56 w-full object-cover" src="sushi.jpg" alt="Суши">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Суши с тунцом</h3>
+                            <p class="text-gray-600 mt-4">Рис, тунец, авокадо, соус унаги.</p>
+                            <div class="mt-8">
+                                <button class="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-400">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="w-full md:w-1/3 px-3 mb-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-2xl">
+                        <img class="h-56 w-full object-cover" src="taco.jpg" alt="Тако">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-800">Тако с говядиной</h3>
+                            <p class="text-gray-600 mt-4">Говядина, овощи, сыр, соус гуакамоле.</p>
+                            <div class="mt-8">
+                                <button class="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-400">Заказать</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-white shadow-lg py-6">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="#" class="text-3xl font-bold">🍔 Бургерная</a>
+                    <p class="mt-4">© 2022. Все права защищены.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">Контакты</h3>
+                    <p class="mt-4">Телефон: +7 (999) 999-99-99</p>
+                    <p class="mt-4">Адрес: г. Москва, ул. Пушкина, д. Колотушкина</p>
+                </div>
+            </div>
         </div>
     </footer>
 
