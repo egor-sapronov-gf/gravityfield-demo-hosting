@@ -1,306 +1,99 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gravity Field Shop — Fortune Wheel</title>
-
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-
-  <!-- GSAP (для анимаций) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-
-  <!-- Confetti.js (или analоги) -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-    /* Лоадер */
-    #loaderOverlay {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 50;
-    }
-
-    /* Плавное появление */
-    .fade-in {
-      opacity: 0;
-    }
-
-    /* Hero banner (параллакс) */
-    .hero-banner {
-      background-image: url('https://via.placeholder.com/1200x600/ffd6e0/333333?text=Big+Promo+Banner');
-      background-size: cover;
-      background-attachment: fixed; /* параллакс */
-      background-position: center;
-      min-height: 300px;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-      transition: transform 0.3s ease;
-    }
-
-    /* Wheel Popup */
-    #wheelModal {
-      transition: opacity 0.3s ease;
-    }
-
-    .wheel-pointer {
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 25px solid #ef4444;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    /* Floating Button (открыть колесо) */
-    #openWheelBtn {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 10;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortune Wheel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100 overflow-x-hidden">
+<body class="bg-gray-100">
 
-<!-- Лоадер -->
-<div id="loaderOverlay">
-  <img src="https://via.placeholder.com/100x100/ffc0cb/ffffff?text=LOADING..." alt="Loading..." />
-</div>
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Logo</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-700 hover:text-gray-900">Home</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-gray-900">Shop</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-gray-900">About</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-gray-900">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<!-- Header -->
-<header class="bg-white shadow p-4 sticky top-0 z-20 fade-in">
-  <div class="max-w-6xl mx-auto flex items-center justify-between">
-    <h1 class="text-xl font-bold text-pink-600">
-      Gravity Field Shop
-    </h1>
-    <nav>
-      <ul class="flex space-x-4 text-gray-700">
-        <li><a href="#" class="hover:underline">Главная</a></li>
-        <li><a href="#" class="hover:underline">Каталог</a></li>
-        <li><a href="#" class="hover:underline">Контакты</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Product Sections -->
+        <section class="mb-8">
+            <h2 class="text-xl font-bold mb-4">Featured Products</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-white p-4 shadow-lg">
+                    <img src="https://via.placeholder.com/150" alt="Product 1" class="mb-2">
+                    <h3 class="text-lg">Product 1</h3>
+                    <p class="text-gray-600">$10.00</p>
+                </div>
+                <div class="bg-white p-4 shadow-lg">
+                    <img src="https://via.placeholder.com/150" alt="Product 2" class="mb-2">
+                    <h3 class="text-lg">Product 2</h3>
+                    <p class="text-gray-600">$20.00</p>
+                </div>
+                <div class="bg-white p-4 shadow-lg">
+                    <img src="https://via.placeholder.com/150" alt="Product 3" class="mb-2">
+                    <h3 class="text-lg">Product 3</h3>
+                    <p class="text-gray-600">$30.00</p>
+                </div>
+            </div>
+        </section>
 
-<!-- Hero Banner -->
-<section class="hero-banner flex items-center justify-center text-white relative fade-in">
-  <div class="bg-black bg-opacity-40 w-full h-full absolute top-0 left-0"></div>
-  <div class="max-w-6xl mx-auto px-4 py-24 relative z-10 text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Привет! Испытай удачу — крути колесо</h2>
-    <p class="text-base md:text-lg">Получай дополнительные скидки и бонусы от Gravity Field</p>
-  </div>
-</section>
+        <section class="mb-8">
+            <h2 class="text-xl font-bold mb-4">New Arrivals</h2>
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-white p-4 shadow-lg">
+                    <img src="https://via.placeholder.com/150" alt="Product 4" class="mb-2">
+                    <h3 class="text-lg">Product 4</h3>
+                    <p class="text-gray-600">$40.00</p>
+                </div>
+                <div class="bg-white p-4 shadow-lg">
+                    <img src="https://via.placeholder.com/150" alt="Product 5" class="mb-2">
+                    <h3 class="text-lg">Product 5</h3>
+                    <p class="text-gray-600">$50.00</p>
+                </div>
+                <div class="bg-white p-4 shadow-lg">
+                    <img src="https://via.placeholder.com/150" alt="Product 6" class="mb-2">
+                    <h3 class="text-lg">Product 6</h3>
+                    <p class="text-gray-600">$60.00</p>
+                </div>
+            </div>
+        </section>
 
-<!-- Products Grid -->
-<main class="max-w-6xl mx-auto py-10 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-in">
-  <!-- Товар 1 -->
-  <div class="product-card bg-white p-4 shadow rounded">
-    <img src="https://via.placeholder.com/400x300" alt="Product 1" class="w-full mb-2 rounded">
-    <h2 class="font-semibold text-lg">Товар #1</h2>
-    <p class="text-sm text-gray-600">Описание товара</p>
-    <p class="mt-2 font-bold text-pink-500">1 999 ₽</p>
-    <button class="mt-2 bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded">В корзину</button>
-  </div>
-  <!-- Товар 2 -->
-  <div class="product-card bg-white p-4 shadow rounded">
-    <img src="https://via.placeholder.com/400x300" alt="Product 2" class="w-full mb-2 rounded">
-    <h2 class="font-semibold text-lg">Товар #2</h2>
-    <p class="text-sm text-gray-600">Описание товара</p>
-    <p class="mt-2 font-bold text-pink-500">2 499 ₽</p>
-    <button class="mt-2 bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded">В корзину</button>
-  </div>
-  <!-- Товар 3 -->
-  <div class="product-card bg-white p-4 shadow rounded">
-    <img src="https://via.placeholder.com/400x300" alt="Product 3" class="w-full mb-2 rounded">
-    <h2 class="font-semibold text-lg">Товар #3</h2>
-    <p class="text-sm text-gray-600">Описание товара</p>
-    <p class="mt-2 font-bold text-pink-500">3 199 ₽</p>
-    <button class="mt-2 bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded">В корзину</button>
-  </div>
-  <!-- Товар 4 -->
-  <div class="product-card bg-white p-4 shadow rounded">
-    <img src="https://via.placeholder.com/400x300" alt="Product 4" class="w-full mb-2 rounded">
-    <h2 class="font-semibold text-lg">Товар #4</h2>
-    <p class="text-sm text-gray-600">Описание товара</p>
-    <p class="mt-2 font-bold text-pink-500">4 599 ₽</p>
-    <button class="mt-2 bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded">В корзину</button>
-  </div>
-</main>
+        <!-- Promo Banner -->
+        <div class="bg-blue-500 text-white text-center py-4 mb-8">
+            <h2 class="text-lg font-bold">Special Offer: 20% off all items!</h2>
+        </div>
 
-<!-- Floating Button to open wheel -->
-<button id="openWheelBtn" class="bg-pink-600 hover:bg-pink-700 text-white py-3 px-4 rounded-full">
-  Крутить колесо
-</button>
+        <!-- Fortune Wheel Popup -->
+        <div id="fortune-popup" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <h2 class="text-2xl font-bold mb-4">Spin the Wheel of Fortune!</h2>
+                <p class="mb-4">Enter your email to win exciting prizes!</p>
+                <input type="email" placeholder="Your email" class="border p-2 mb-4 w-full">
+                <button id="spin-button" class="bg-blue-500 text-white px-4 py-2 rounded">Spin Now</button>
+                <div id="wheel" class="mt-6"></div>
+                <button id="close-popup" class="mt-4 text-gray-500">Close</button>
+            </div>
+        </div>
+    </main>
 
-<!-- Fortune Wheel Popup -->
-<div id="wheelModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-  <div class="bg-white p-6 rounded shadow relative w-96">
-    <h3 class="text-xl font-bold mb-2 text-center text-pink-600">Испытай удачу!</h3>
-    <div class="relative mx-auto mt-2">
-      <canvas id="wheelCanvas" width="300" height="300"></canvas>
-      <div class="wheel-pointer"></div>
-    </div>
-    <button id="spinBtn" class="mt-4 bg-pink-600 hover:bg-pink-700 text-white py-2 px-4 rounded block mx-auto">Крутить колесо</button>
-    <button id="closeWheel" class="absolute top-2 right-2 text-gray-500 hover:text-gray-900 text-2xl">&times;</button>
-  </div>
-</div>
+    <!-- Footer -->
+    <footer class="bg-white shadow mt-8">
+        <div class="container mx-auto px-4 py-6 text-center">
+            <p class="text-gray-600">&copy; 2023 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
 
-<!-- Footer -->
-<footer class="bg-white shadow p-4 mt-8 fade-in">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between text-sm text-gray-600">
-    <p>&copy; 2023 Gravity Field Demo</p>
-    <div class="mt-2 md:mt-0">
-      <a href="#" class="hover:underline mx-2">Политика конфиденциальности</a> |
-      <a href="#" class="hover:underline mx-2">Условия использования</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // Изначально скрыть контент, показать лоадер
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.style.overflow = 'hidden'; // блокируем скролл до снятия лоадера
-  });
-
-  // Убираем лоадер после пары секунд
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('loaderOverlay').style.display = 'none';
-      document.body.style.overflow = 'auto';
-
-      // Запускаем анимации GSAP
-      gsap.to('header, .hero-banner, main, footer', {opacity:1, duration:1, ease: 'power1.out', stagger:0.2});
-    }, 1500);
-  });
-
-  // Анимация плавного появления
-  document.querySelectorAll('header, .hero-banner, main, footer')
-    .forEach(el => el.style.opacity = 0);
-
-  // Открыть колесо
-  document.getElementById('openWheelBtn').addEventListener('click', () => {
-    document.getElementById('wheelModal').classList.remove('hidden');
-    gsap.fromTo('#wheelModal', {opacity:0}, {opacity:1, duration:0.3});
-  });
-
-  // Закрыть колесо
-  document.getElementById('closeWheel').addEventListener('click', () => {
-    gsap.to('#wheelModal', {
-      opacity: 0,
-      duration: 0.3,
-      onComplete: () => {
-        document.getElementById('wheelModal').classList.add('hidden');
-      }
-    });
-  });
-
-  // Колесо фортуны
-  const canvas = document.getElementById('wheelCanvas');
-  const ctx = canvas.getContext('2d');
-  const segments = ['-10%', '-20%', '-30%', 'Бесплатная доставка', '-50%', 'Попробуй еще!', 'Супер приз!'];
-  let currentAngle = 0;
-
-  function drawWheel(angleDeg) {
-    const arc = 2 * Math.PI / segments.length;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (let i = 0; i < segments.length; i++) {
-      const startAngle = (angleDeg * Math.PI/180) + i * arc;
-      ctx.beginPath();
-      ctx.fillStyle = i % 2 === 0 ? '#FDE68A' : '#FCD34D';
-      ctx.moveTo(canvas.width / 2, canvas.height / 2);
-      ctx.arc(canvas.width / 2, canvas.height / 2, 150, startAngle, startAngle + arc);
-      ctx.fill();
-
-      // Текст
-      ctx.save();
-      ctx.fillStyle = '#333';
-      ctx.translate(canvas.width / 2, canvas.height / 2);
-      ctx.rotate(startAngle + arc / 2);
-      ctx.font = 'bold 14px sans-serif';
-      ctx.fillText(segments[i], 60, 5);
-      ctx.restore();
-    }
-  }
-
-  drawWheel(currentAngle);
-
-  document.getElementById('spinBtn').addEventListener('click', () => {
-    const randomSpin = 360 * 4 + Math.floor(Math.random() * 360);
-    const spinDuration = 3000;
-    const startAngle = currentAngle;
-    const startTime = performance.now();
-
-    function rotate(timestamp) {
-      let elapsed = timestamp - startTime;
-      if (elapsed < spinDuration) {
-        const progress = elapsed / spinDuration;
-        currentAngle = startAngle + (randomSpin - startAngle) * easeOutQuad(progress);
-        drawWheel(currentAngle);
-        requestAnimationFrame(rotate);
-      } else {
-        currentAngle = randomSpin;
-        drawWheel(currentAngle);
-        // Конфетти
-        fireConfetti();
-        alert('Поздравляем! Ваша скидка: ' + chooseSegment());
-      }
-    }
-
-    requestAnimationFrame(rotate);
-  });
-
-  function chooseSegment() {
-    const arcSize = 360 / segments.length;
-    let normalizedAngle = currentAngle % 360;
-    if (normalizedAngle < 0) normalizedAngle += 360;
-    let index = Math.floor((360 - normalizedAngle) / arcSize) % segments.length;
-    return segments[index];
-  }
-
-  function easeOutQuad(t) {
-    return t * (2 - t);
-  }
-
-  // Запуск конфетти
-  function fireConfetti() {
-    // конфетти ~ 1 сек
-    var end = Date.now() + (1 * 1000);
-    (function frame() {
-      confetti({
-        particleCount: 5,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 }
-      });
-      confetti({
-        particleCount: 5,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 }
-      });
-
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
-  }
-</script>
+    <script src="script.js"></script>
 </body>
 </html>

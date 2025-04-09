@@ -1,0 +1,19 @@
+#wheel {
+    width: 200px;
+    height: 200px;
+    background: conic-gradient(
+        #ff9999 0% 20%,
+        #99ccff 20% 40%,
+        #ffcc99 40% 60%,
+        #99ff99 60% 80%,
+        #ccccff 80% 100%
+    );
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+    transition: transform 4s ease;
+}
+
+#fortune-popup {
+    display: none;
+}
