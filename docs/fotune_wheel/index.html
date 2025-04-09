@@ -1,63 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Demo with Wheel of Fortune</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Demo Shop with Fortune Wheel</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s;
+    }
+    #wheelModal {
+      transition: opacity 0.3s ease;
+    }
+  </style>
 </head>
 <body class="bg-gray-100">
-<header class="bg-white shadow py-4">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-lg leading-6 font-semibold text-gray-900">E-commerce Store</h1>
+  <!-- Header -->
+  <header class="bg-white shadow p-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <h1 class="text-xl font-semibold">Demo Shop</h1>
+      <nav>
+        <ul class="flex space-x-4 text-gray-700">
+          <li><a href="#" class="hover:underline">Главная</a></li>
+          <li><a href="#" class="hover:underline">Каталог</a></li>
+          <li><a href="#" class="hover:underline">Контакты</a></li>
+        </ul>
+      </nav>
     </div>
-</header>
+  </header>
 
-<main class="mt-8">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="bg-white p-6 shadow rounded-lg">
-                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-32 object-cover mb-4">
-                <h3 class="font-bold text-lg">Product Name</h3>
-                <p class="text-gray-500">Description...</p>
-                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
-            </div>
-            <div class="bg-white p-6 shadow rounded-lg">
-                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-32 object-cover mb-4">
-                <h3 class="font-bold text-lg">Product Name 2</h3>
-                <p class="text-gray-500">Description...</p>
-                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
-            </div>
-            <div class="bg-white p-6 shadow rounded-lg">
-                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-32 object-cover mb-4">
-                <h3 class="font-bold text-lg">Product Name 3</h3>
-                <p class="text-gray-500">Description...</p>
-                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
-            </div>
-            <div class="bg-white p-6 shadow rounded-lg">
-                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-32 object-cover mb-4">
-                <h3 class="font-bold text-lg">Product Name 4</h3>
-                <p class="text-gray-500">Description...</p>
-                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
-            </div>
-        </div>
+  <!-- Products -->
+  <main class="max-w-6xl mx-auto py-8 px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white p-4 shadow rounded product-card">
+      <img src="https://via.placeholder.com/300x200" alt="Product 1" class="w-full mb-2">
+      <h2 class="font-semibold text-lg">Товар #1</h2>
+      <p class="text-sm text-gray-600">Описание товара</p>
+      <p class="mt-2 font-bold text-blue-500">1 999 ₽</p>
+      <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">В корзину</button>
     </div>
-</main>
-
-<div id="wheelOfFortune" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" style="display:none;">
-    <!-- Modal content -->
-    <div class="min-h-screen px-4 text-center">
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 border w-96 shadow-lg rounded-md bg-white">
-            <h2 class="font-bold text-xl mb-2">Spin the Wheel!</h2>
-            <canvas id="wheelCanvas" width="300" height="300"></canvas>
-            <button id="spinButton" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                Spin
-            </button>
-        </div>
+    <div class="bg-white p-4 shadow rounded product-card">
+      <img src="https://via.placeholder.com/300x200" alt="Product 2" class="w-full mb-2">
+      <h2 class="font-semibold text-lg">Товар #2</h2>
+      <p class="text-sm text-gray-600">Описание товара</p>
+      <p class="mt-2 font-bold text-blue-500">2 499 ₽</p>
+      <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">В корзину</button>
     </div>
-</div>
+    <div class="bg-white p-4 shadow rounded product-card">
+      <img src="https://via.placeholder.com/300x200" alt="Product 3" class="w-full mb-2">
+      <h2 class="font-semibold text-lg">Товар #3</h2>
+      <p class="text-sm text-gray-600">Описание товара</p>
+      <p class="mt-2 font-bold text-blue-500">3 199 ₽</p>
+      <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">В корзину</button>
+    </div>
+    <div class="bg-white p-4 shadow rounded product-card">
+      <img src="https://via.placeholder.com/300x200" alt="Product 4" class="w-full mb-2">
+      <h2 class="font-semibold text-lg">Товар #4</h2>
+      <p class="text-sm text-gray-600">Описание товара</p>
+      <p class="mt-2 font-bold text-blue-500">4 599 ₽</p>
+      <button class="mt-2 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">В корзину</button>
+    </div>
+  </main>
 
-<script src="script.js"></script>
+  <!-- Fortune Wheel Popup -->
+  <div id="wheelModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+    <div class="bg-white p-6 rounded shadow relative">
+      <h3 class="text-xl font-bold mb-2 text-center">Испытай удачу!</h3>
+      <canvas id="wheelCanvas" width="300" height="300" class="mx-auto"></canvas>
+      <button id="spinBtn" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded block mx-auto">Крутить колесо</button>
+      <button id="closeWheel" class="absolute top-2 right-2 text-gray-500 hover:text-gray-900">&times;</button>
+    </div>
+  </div>
+
+  <footer class="bg-white shadow p-4 mt-8">
+    <div class="max-w-6xl mx-auto text-gray-600 text-sm">&copy; 2023 Demo Shop</div>
+  </footer>
+
+  <script>
+    // Показать колесо при загрузке
+    window.addEventListener('load', () => {
+      document.getElementById('wheelModal').classList.remove('hidden');
+    });
+
+    // Скрыть колесо
+    document.getElementById('closeWheel').addEventListener('click', () => {
+      document.getElementById('wheelModal').classList.add('hidden');
+    });
+
+    // Логика колеса
+    const canvas = document.getElementById('wheelCanvas');
+    const ctx = canvas.getContext('2d');
+    const segments = ['-10%', '-20%', '-30%', 'Бесплатная доставка', '-50%', 'Попробуй еще!'];
+    let currentAngle = 0;
+
+    function drawWheel(angle) {
+      const arc = 2 * Math.PI / segments.length;
+      for (let i = 0; i < segments.length; i++) {
+        const startAngle = angle + i * arc;
+        ctx.beginPath();
+        ctx.fillStyle = i % 2 === 0 ? '#F59E0B' : '#FBBF24';
+        ctx.moveTo(canvas.width / 2, canvas.height / 2);
+        ctx.arc(canvas.width / 2, canvas.height / 2, 150, startAngle, startAngle + arc);
+        ctx.fill();
+
+        // Текст
+        ctx.save();
+        ctx.fillStyle = '#333';
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(startAngle + arc / 2);
+        ctx.fillText(segments[i], 60, 5);
+        ctx.restore();
+      }
+    }
+
+    drawWheel(currentAngle);
+
+    document.getElementById('spinBtn').addEventListener('click', () => {
+      let randomSpin = 360 * 3 + Math.floor(Math.random() * 360);
+      const spinDuration = 3000;
+      const startAngle = currentAngle;
+      const startTime = performance.now();
+
+      function rotate(timestamp) {
+        let elapsed = timestamp - startTime;
+        if (elapsed < spinDuration) {
+          const progress = elapsed / spinDuration;
+          currentAngle = startAngle + (randomSpin - startAngle) * easeOutQuad(progress);
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          drawWheel(currentAngle * Math.PI / 180);
+          requestAnimationFrame(rotate);
+        } else {
+          currentAngle = randomSpin;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          drawWheel(currentAngle * Math.PI / 180);
+          alert('Поздравляем! Ваша скидка: ' + chooseSegment());
+        }
+      }
+
+      requestAnimationFrame(rotate);
+    });
+
+    function chooseSegment() {
+      const arc = 360 / segments.length;
+      const index = Math.floor((360 - (currentAngle % 360)) / arc) % segments.length;
+      return segments[index];
+    }
+
+    function easeOutQuad(t) {
+      return t * (2 - t);
+    }
+  </script>
 </body>
 </html>
