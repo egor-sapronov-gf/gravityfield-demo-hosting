@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Demo with Wheel of Fortune</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body class="bg-gray-100">
+<header class="bg-white shadow py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-lg leading-6 font-semibold text-gray-900">E-commerce Store</h1>
+    </div>
+</header>
+
+<main class="mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 shadow rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-32 object-cover mb-4">
+                <h3 class="font-bold text-lg">Product Name</h3>
+                <p class="text-gray-500">Description...</p>
+                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
+            </div>
+            <div class="bg-white p-6 shadow rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-32 object-cover mb-4">
+                <h3 class="font-bold text-lg">Product Name 2</h3>
+                <p class="text-gray-500">Description...</p>
+                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
+            </div>
+            <div class="bg-white p-6 shadow rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-32 object-cover mb-4">
+                <h3 class="font-bold text-lg">Product Name 3</h3>
+                <p class="text-gray-500">Description...</p>
+                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
+            </div>
+            <div class="bg-white p-6 shadow rounded-lg">
+                <img src="https://via.placeholder.com/150" alt="Product Image" class="w-full h-32 object-cover mb-4">
+                <h3 class="font-bold text-lg">Product Name 4</h3>
+                <p class="text-gray-500">Description...</p>
+                <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="wheelOfFortune" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full" style="display:none;">
+    <!-- Modal content -->
+    <div class="min-h-screen px-4 text-center">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-8 border w-96 shadow-lg rounded-md bg-white">
+            <h2 class="font-bold text-xl mb-2">Spin the Wheel!</h2>
+            <canvas id="wheelCanvas" width="300" height="300"></canvas>
+            <button id="spinButton" class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Spin
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
