@@ -1,10 +1,14 @@
+
 document.addEventListener('DOMContentLoaded', function() {
+    // Display the wheel of fortune modal on load
+    document.getElementById('wheelOfFortune').style.display = 'block';
+
     var canvas = document.getElementById('wheelCanvas');
     var ctx = canvas.getContext('2d');
     var angle = 0;
     var sectors = ['10% OFF', '15% OFF', '20% OFF', '25% OFF', 'TRY AGAIN', '50% OFF', '30% OFF', 'LUCKY NEXT TIME'];
     var colors = ['#FF6666', '#FFA07A', '#DB7093', '#FF4500', '#FFD700', '#FF6347', '#FF8C00', '#FFDAB9'];
-    
+
     function drawWheel() {
         var startAngle = 0;
         var arc = 2 * Math.PI / sectors.length;
