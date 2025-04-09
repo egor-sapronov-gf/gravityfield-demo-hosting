@@ -1,18 +1,24 @@
-const ingredients = document.querySelectorAll('.ingredient');
-const burger = document.querySelector('.burger');
+document.addEventListener('DOMContentLoaded', function () {
+  const burgerStack = document.getElementById('burgerStack');
+  const totalPriceElement = document.getElementById('totalPrice');
+  let totalPrice = 0;
 
-ingredients.forEach(ingredient => {
-    const addButton = ingredient.querySelector('.add-ingredient');
-    addButton.addEventListener('click', () => {
-        const ingredientType = ingredient.dataset.ingredient;
-        const newIngredient = document.createElement('div');
-        newIngredient.classList.add(ingredientType);
-        burger.appendChild(newIngredient);
+  document.querySelectorAll('.ingredient').forEach(ingredient => {
+    ingredient.addEventListener('click', function () {
+      const ingredientName = this.getAttribute('data-name');
+      const ingredientPrice = parseFloat(this.getAttribute('data-price'));
+      
+      const ingredientElement = document.createElement('div');
+      ingredientElement.textContent = ingredientName;
+      ingredientElement.className = 'added-ingredient';
+      burgerStack.appendChild(ingredientElement);
+
+      totalPrice += ingredientPrice;
+      totalPriceElement.textContent = totalPrice.toFixed(2);
     });
-});
+  });
 
-const orderButton = document.querySelector('.order-button');
-orderButton.addEventListener('click', () => {
-    // Здесь можно добавить логику заказа бургера
-    alert('Бургер заказан!');
+  document.querySelector('.cta-btn').addEventListener('click', function () {
+    alert(`Ваш бургер собран! Итого к оплате: ${totalPrice.toFixed(2)} ₽`);
+  });
 });
