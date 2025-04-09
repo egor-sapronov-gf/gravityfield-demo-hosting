@@ -1,18 +1,23 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const popup = document.getElementById('fortune-popup');
-    const spinButton = document.getElementById('spin-button');
-    const closeButton = document.getElementById('close-popup');
-    const wheel = document.getElementById('wheel');
+/* Скрипты механики */
+const canvas = document.getElementById('wheelCanvas');
+const ctx = canvas.getContext('2d');
+const spinBtn = document.querySelector('.spinBtn');
+const closeBtn = document.querySelector('.close-btn');
+const popupOverlay = document.querySelector('.popup-overlay');
+const emailForm = document.querySelector('.email-form');
 
-    // Show the popup on page load
-    popup.style.display = 'flex';
+// логика вращения колеса...
+spinBtn.addEventListener('click', () => {
+  // вращение колеса...
+});
 
-    spinButton.addEventListener('click', function () {
-        const randomDegree = Math.floor(Math.random() * 360) + 720; // Additional 720 for multiple spins
-        wheel.style.transform = `rotate(${randomDegree}deg)`;
-    });
+// закрытие попапа
+closeBtn.addEventListener('click', () => {
+  popupOverlay.style.display = 'none';
+});
 
-    closeButton.addEventListener('click', function () {
-        popup.style.display = 'none';
-    });
+// сбор email
+emailForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  // сбор email...
 });
