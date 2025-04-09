@@ -1,66 +1,18 @@
 .gf-mechanic {
-  background: #fff8e1;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: auto;
+    max-width: 400px;
+    margin: 0 auto;
 }
-
-.burger-builder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.gf-btn {
+    display: inline-block;
+    margin: 0 5px;
 }
-
-.ingredient-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+.gf-question {
+    animation: fadeIn 0.5s ease-in-out;
 }
-
-.ingredient {
-  cursor: pointer;
-  margin: 10px;
-  text-align: center;
-  transition: transform 0.3s ease;
+.gf-result {
+    animation: fadeIn 0.5s ease-in-out;
 }
-
-.ingredient img {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
-
-.ingredient:hover {
-  transform: scale(1.1);
-}
-
-.burger-preview {
-  text-align: center;
-}
-
-.burger-stack {
-  min-height: 100px;
-  margin-bottom: 10px;
-}
-
-.total-price {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.cta-btn {
-  background-color: #ff6f00;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.cta-btn:hover {
-  background-color: #e65100;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }

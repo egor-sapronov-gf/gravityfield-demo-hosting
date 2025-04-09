@@ -5,127 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Доставка еды</title>
+    <title>Магазин Мебели</title>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100">
 
     <!-- Шапка -->
-    <header class="bg-white shadow-lg">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <div class="text-2xl font-bold text-green-500">🍔 FoodExpress</div>
+    <header class="bg-white shadow-lg py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <div class="text-2xl font-bold">Мебельный Магазин</div>
             <nav class="flex space-x-4">
-                <a href="#" class="hover:text-green-500 transition">Главная</a>
-                <a href="#" class="hover:text-green-500 transition">Меню</a>
-                <a href="#" class="hover:text-green-500 transition">Контакты</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900">Главная</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900">Каталог</a>
+                <a href="#" class="text-gray-700 hover:text-gray-900">Контакты</a>
             </nav>
         </div>
     </header>
 
     <!-- Карточки товаров -->
-    <section class="container mx-auto py-12">
-        <h2 class="text-3xl font-bold text-center mb-8">Популярные блюда</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition">
-                <img src="https://via.placeholder.com/300" alt="Бургер Классический" class="w-full h-48 object-cover rounded-t-lg">
+    <section class="py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
+                <img src="https://source.unsplash.com/600x400/?furniture" alt="Диван Комфорт" class="rounded-lg object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold">Бургер Классический</h3>
-                    <p class="mt-2">Сочный бургер с говяжьей котлетой и свежими овощами.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-xl font-bold text-green-500">350 ₽</span>
-                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Заказать</button>
-                    </div>
+                    <h2 class="font-bold text-xl mb-2">Диван Комфорт</h2>
+                    <p class="text-gray-700 mb-4">Удобный и стильный диван для вашего дома.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Купить</button>
                 </div>
             </div>
-            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition">
-                <img src="https://via.placeholder.com/300" alt="Пицца Маргарита" class="w-full h-48 object-cover rounded-t-lg">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
+                <img src="https://source.unsplash.com/600x400/?chair" alt="Кресло Уют" class="rounded-lg object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold">Пицца Маргарита</h3>
-                    <p class="mt-2">Традиционная пицца с томатами и сыром моцарелла.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-xl font-bold text-green-500">450 ₽</span>
-                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Заказать</button>
-                    </div>
+                    <h2 class="font-bold text-xl mb-2">Кресло Уют</h2>
+                    <p class="text-gray-700 mb-4">Эргономичное кресло для вашего комфорта.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Купить</button>
                 </div>
             </div>
-            <div class="bg-white rounded-lg shadow-lg hover:shadow-2xl transition">
-                <img src="https://via.placeholder.com/300" alt="Суши Сет" class="w-full h-48 object-cover rounded-t-lg">
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
+                <img src="https://source.unsplash.com/600x400/?table" alt="Стол Рабочий" class="rounded-lg object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold">Суши Сет</h3>
-                    <p class="mt-2">Ассорти из свежих суши и роллов.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-xl font-bold text-green-500">600 ₽</span>
-                        <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Заказать</button>
-                    </div>
+                    <h2 class="font-bold text-xl mb-2">Стол Рабочий</h2>
+                    <p class="text-gray-700 mb-4">Идеальный стол для вашего офиса.</p>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Купить</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Баннер -->
-    <section class="bg-green-500 text-white py-12">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-4">Скидка 20% на первый заказ!</h2>
-            <p class="mb-8">Используйте промокод FIRST20 при оформлении заказа.</p>
-            <button class="bg-white text-green-500 px-6 py-3 rounded-full font-bold hover:bg-gray-100 transition">Заказать сейчас</button>
+    <section class="bg-cover bg-center py-20" style="background-image: url('https://source.unsplash.com/1200x400/?interior');">
+        <div class="container mx-auto text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">Создайте уют в вашем доме</h2>
+            <p class="mb-6">Скидки на всю коллекцию мебели до конца месяца!</p>
+            <button class="bg-red-500 text-white px-6 py-3 rounded hover:bg-red-600 transition">Узнать больше</button>
         </div>
     </section>
 
-    <!-- МЕХАНИКА: сюда вставится собери бургер как встроенный виджет -->
-    <div class="gf-mechanic">
-      <h2 class="text-xl font-bold text-center mb-4">Собери свой идеальный бургер!</h2>
-      <div class="burger-builder">
-        <div class="ingredient-list">
-          <div class="ingredient" data-name="Булочка" data-price="1">
-            <img src="path/to/bun.png" alt="Булочка">
-            <span>Булочка</span>
-          </div>
-          <div class="ingredient" data-name="Котлета" data-price="2">
-            <img src="path/to/patty.png" alt="Котлета">
-            <span>Котлета</span>
-          </div>
-          <div class="ingredient" data-name="Сыр" data-price="1.5">
-            <img src="path/to/cheese.png" alt="Сыр">
-            <span>Сыр</span>
-          </div>
-          <!-- Добавьте другие ингредиенты по аналогии -->
-        </div>
-        <div class="burger-preview">
-          <h3>Ваш бургер:</h3>
-          <div id="burgerStack" class="burger-stack"></div>
-          <div class="total-price">Итого: <span id="totalPrice">0</span> ₽</div>
-          <button class="cta-btn">Заказать бургер</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Футер -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="font-bold text-lg mb-2">Контакты</h3>
-                <p>Телефон: +7 (999) 123-45-67</p>
-                <p>Email: support@foodexpress.ru</p>
-            </div>
-            <div>
-                <h3 class="font-bold text-lg mb-2">Навигация</h3>
-                <ul>
-                    <li><a href="#" class="hover:underline">Главная</a></li>
-                    <li><a href="#" class="hover:underline">Меню</a></li>
-                    <li><a href="#" class="hover:underline">Контакты</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="font-bold text-lg mb-2">Социальные сети</h3>
-                <p>Следите за нами:</p>
-                <div class="flex space-x-4 mt-2">
-                    <a href="#" class="hover:text-green-500 transition">👍</a>
-                    <a href="#" class="hover:text-green-500 transition">🐦</a>
-                    <a href="#" class="hover:text-green-500 transition">📸</a>
+    <!-- МЕХАНИКА: сюда вставится подборщик матрасов как встроенный блок -->
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <div class="gf-mechanic bg-white p-6 rounded-lg shadow-lg text-center relative">
+                <img src="https://img.icons8.com/emoji/48/bed.png" alt="Матрас" class="mx-auto mb-2">
+                <h2 class="gf-title text-2xl font-bold mb-1">Подберите идеальный матрас 🛏️</h2>
+                <p class="text-sm text-gray-500 mb-4">Ответьте на несколько вопросов и получите рекомендации по матрасу, идеально подходящему для вас!</p>
+                <div class="gf-quiz">
+                    <div class="gf-question mb-4">
+                        <p class="text-lg">Какой уровень жесткости вы предпочитаете?</p>
+                        <button class="gf-btn mt-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">Мягкий</button>
+                        <button class="gf-btn mt-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">Средний</button>
+                        <button class="gf-btn mt-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">Жесткий</button>
+                    </div>
+                    <div class="gf-result hidden text-lg text-green-600 mt-4">
+                        🎉 Ваш идеальный матрас: <span class="font-bold">Comfort Sleep</span>!
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="font-bold text-xl mb-2">Контакты</h3>
+                <p>Телефон: +7 (123) 456-78-90</p>
+                <p>Email: info@mebelmag.ru</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-xl mb-2">Информация</h3>
+                <a href="#" class="block text-gray-400 hover:text-white">О нас</a>
+                <a href="#" class="block text-gray-400 hover:text-white">Доставка</a>
+                <a href="#" class="block text-gray-400 hover:text-white">Политика конфиденциальности</a>
+            </div>
+            <div>
+                <h3 class="font-bold text-xl mb-2">Социальные сети</h3>
+                <a href="#" class="block text-gray-400 hover:text-white">Facebook</a>
+                <a href="#" class="block text-gray-400 hover:text-white">Instagram</a>
+                <a href="#" class="block text-gray-400 hover:text-white">VK</a>
+            </div>
+        </div>
         <div class="text-center mt-8">
-            <p>© 2023 FoodExpress. Все права защищены.</p>
+            <p class="text-gray-500">&copy; 2023 Мебельный Магазин. Все права защищены.</p>
         </div>
     </footer>
 
