@@ -1,18 +1,24 @@
+
 .gf-mechanic {
-    max-width: 400px;
-    margin: 0 auto;
+  font-family: 'Arial', sans-serif;
 }
-.gf-btn {
-    display: inline-block;
-    margin: 0 5px;
+
+.gf-step, .gf-result {
+  transition: opacity 0.3s ease-in-out;
 }
-.gf-question {
-    animation: fadeIn 0.5s ease-in-out;
+
+.hidden {
+  display: none;
 }
-.gf-result {
-    animation: fadeIn 0.5s ease-in-out;
+
+.gf-option {
+  cursor: pointer;
 }
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+
+.gf-option:hover {
+  background-color: #e2e8f0;
+}
+
+.gf-email-input {
+  border: 1px solid #cbd5e0;
 }

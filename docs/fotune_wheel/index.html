@@ -3,80 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин мебели</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Магазин Мебели</title>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 text-gray-800">
 
     <!-- Шапка -->
     <header class="bg-white shadow-lg py-4">
-        <div class="container mx-auto flex justify-between items-center px-6">
-            <div class="text-2xl font-bold">Мебельный Магазин</div>
-            <nav class="flex space-x-4">
-                <a href="#" class="text-gray-700 hover:text-gray-900">Главная</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900">Каталог</a>
-                <a href="#" class="text-gray-700 hover:text-gray-900">Контакты</a>
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold text-gray-900">Мебельный Дом</div>
+            <nav class="space-x-4">
+                <a href="#" class="text-gray-600 hover:text-gray-900">Каталог</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">О нас</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">Контакты</a>
             </nav>
         </div>
     </header>
 
-    <!-- Карточки товаров -->
-    <section class="py-12">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
-                <img src="https://source.unsplash.com/600x400/?furniture" alt="Диван Комфорт" class="rounded-lg object-cover">
-                <div class="p-6">
-                    <h2 class="font-bold text-xl mb-2">Диван Комфорт</h2>
-                    <p class="text-gray-700 mb-4">Удобный и стильный диван для вашего дома.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Купить</button>
+    <!-- Категории товаров -->
+    <section class="py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-xl font-bold mb-4">Категории товаров</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/600x400/?sofa" alt="Диван" class="rounded-lg object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Диваны</h3>
+                        <p class="text-gray-600">Уютные и стильные диваны для вашего дома.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/600x400/?table" alt="Стол" class="rounded-lg object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Столы</h3>
+                        <p class="text-gray-600">Элегантные столы для любой комнаты.</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/600x400/?chair" alt="Кресло" class="rounded-lg object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Кресла</h3>
+                        <p class="text-gray-600">Комфортные кресла для отдыха и работы.</p>
+                    </div>
                 </div>
             </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
-                <img src="https://source.unsplash.com/600x400/?chair" alt="Кресло Уют" class="rounded-lg object-cover">
-                <div class="p-6">
-                    <h2 class="font-bold text-xl mb-2">Кресло Уют</h2>
-                    <p class="text-gray-700 mb-4">Эргономичное кресло для вашего комфорта.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Купить</button>
+        </div>
+    </section>
+
+    <!-- Рекомендуемые товары -->
+    <section class="py-8 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-xl font-bold mb-4">Рекомендуемые товары</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/600x400/?bed" alt="Кровать" class="rounded-lg object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Кровать</h3>
+                        <p class="text-gray-600">Удобные кровати для вашего сна.</p>
+                        <p class="text-gray-900 font-bold">12,000 ₽</p>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition">
-                <img src="https://source.unsplash.com/600x400/?table" alt="Стол Рабочий" class="rounded-lg object-cover">
-                <div class="p-6">
-                    <h2 class="font-bold text-xl mb-2">Стол Рабочий</h2>
-                    <p class="text-gray-700 mb-4">Идеальный стол для вашего офиса.</p>
-                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Купить</button>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/600x400/?wardrobe" alt="Шкаф" class="rounded-lg object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Шкаф</h3>
+                        <p class="text-gray-600">Просторные шкафы для вашего гардероба.</p>
+                        <p class="text-gray-900 font-bold">15,000 ₽</p>
+                    </div>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow">
+                    <img src="https://source.unsplash.com/600x400/?lamp" alt="Лампа" class="rounded-lg object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg">Лампа</h3>
+                        <p class="text-gray-600">Стильные лампы для уютного освещения.</p>
+                        <p class="text-gray-900 font-bold">3,500 ₽</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Баннер -->
-    <section class="bg-cover bg-center py-20" style="background-image: url('https://source.unsplash.com/1200x400/?interior');">
-        <div class="container mx-auto text-center text-white">
-            <h2 class="text-3xl font-bold mb-4">Создайте уют в вашем доме</h2>
-            <p class="mb-6">Скидки на всю коллекцию мебели до конца месяца!</p>
-            <button class="bg-red-500 text-white px-6 py-3 rounded hover:bg-red-600 transition">Узнать больше</button>
+    <section class="py-16 bg-cover bg-center" style="background-image: url('https://source.unsplash.com/1200x600/?furniture');">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Скидки до 50% на всю мебель!</h2>
+            <p class="text-white mb-8">Поспешите, предложение ограничено!</p>
+            <a href="#" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition">Узнать больше</a>
         </div>
     </section>
 
-    <!-- МЕХАНИКА: сюда вставится подборщик матрасов как встроенный блок -->
-    <section class="py-12">
-        <div class="container mx-auto px-6">
-            <div class="gf-mechanic bg-white p-6 rounded-lg shadow-lg text-center relative">
-                <img src="https://img.icons8.com/emoji/48/bed.png" alt="Матрас" class="mx-auto mb-2">
-                <h2 class="gf-title text-2xl font-bold mb-1">Подберите идеальный матрас 🛏️</h2>
-                <p class="text-sm text-gray-500 mb-4">Ответьте на несколько вопросов и получите рекомендации по матрасу, идеально подходящему для вас!</p>
-                <div class="gf-quiz">
+    <!-- МЕХАНИКА: сюда вставится product_selector как inline-блок -->
+    <section class="py-8">
+        <div class="container mx-auto px-4">
+            <div class="gf-mechanic bg-white shadow-lg rounded-lg p-6 max-w-md mx-auto mt-10">
+                <div class="gf-step gf-step-1">
+                    <h2 class="text-2xl font-bold mb-4">Выберите идеальную мебель для вашего дома 🛋️</h2>
+                    <p class="mb-6">Ответьте на несколько вопросов, и мы подберём для вас лучшие варианты.</p>
+                    <button class="gf-next-step bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Начать</button>
+                </div>
+
+                <div class="gf-step gf-step-2 hidden">
+                    <h3 class="text-xl font-semibold mb-4">Какой стиль мебели вам нравится?</h3>
                     <div class="gf-question mb-4">
-                        <p class="text-lg">Какой уровень жесткости вы предпочитаете?</p>
-                        <button class="gf-btn mt-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">Мягкий</button>
-                        <button class="gf-btn mt-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">Средний</button>
-                        <button class="gf-btn mt-2 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">Жесткий</button>
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">Современный</button>
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">Классический</button>
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">Минимализм</button>
                     </div>
-                    <div class="gf-result hidden text-lg text-green-600 mt-4">
-                        🎉 Ваш идеальный матрас: <span class="font-bold">Comfort Sleep</span>!
+                </div>
+
+                <div class="gf-step gf-step-3 hidden">
+                    <h3 class="text-xl font-semibold mb-4">Какой тип мебели вы ищете?</h3>
+                    <div class="gf-question mb-4">
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">Диван</button>
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">Кровать</button>
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">Стол</button>
                     </div>
+                </div>
+
+                <div class="gf-step gf-step-4 hidden">
+                    <h3 class="text-xl font-semibold mb-4">Какой у вас бюджет?</h3>
+                    <div class="gf-question mb-4">
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">До 20 000 ₽</button>
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">20 000 ₽ - 50 000 ₽</button>
+                        <button class="gf-option bg-gray-100 p-2 rounded mb-2 w-full hover:bg-gray-200">Более 50 000 ₽</button>
+                    </div>
+                </div>
+
+                <div class="gf-result hidden">
+                    <h3 class="text-xl font-semibold mb-4">Ваши рекомендации готовы! 🎉</h3>
+                    <p class="mb-4">Мы подобрали для вас несколько отличных вариантов. Пожалуйста, оставьте свой e-mail, чтобы получить результаты.</p>
+                    <input type="email" class="gf-email-input border p-2 rounded w-full mb-4" placeholder="Ваш e-mail">
+                    <button class="gf-submit bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Получить результаты</button>
                 </div>
             </div>
         </div>
@@ -84,27 +142,25 @@
 
     <!-- Футер -->
     <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="font-bold text-xl mb-2">Контакты</h3>
-                <p>Телефон: +7 (123) 456-78-90</p>
-                <p>Email: info@mebelmag.ru</p>
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between">
+                <div>
+                    <h3 class="font-bold text-lg">Контакты</h3>
+                    <p>Телефон: +7 (123) 456-78-90</p>
+                    <p>Email: info@furniturestore.ru</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">Навигация</h3>
+                    <ul>
+                        <li><a href="#" class="hover:underline">Каталог</a></li>
+                        <li><a href="#" class="hover:underline">О нас</a></li>
+                        <li><a href="#" class="hover:underline">Контакты</a></li>
+                    </ul>
+                </div>
             </div>
-            <div>
-                <h3 class="font-bold text-xl mb-2">Информация</h3>
-                <a href="#" class="block text-gray-400 hover:text-white">О нас</a>
-                <a href="#" class="block text-gray-400 hover:text-white">Доставка</a>
-                <a href="#" class="block text-gray-400 hover:text-white">Политика конфиденциальности</a>
+            <div class="text-center mt-8">
+                <p>&copy; 2023 Мебельный Дом. Все права защищены.</p>
             </div>
-            <div>
-                <h3 class="font-bold text-xl mb-2">Социальные сети</h3>
-                <a href="#" class="block text-gray-400 hover:text-white">Facebook</a>
-                <a href="#" class="block text-gray-400 hover:text-white">Instagram</a>
-                <a href="#" class="block text-gray-400 hover:text-white">VK</a>
-            </div>
-        </div>
-        <div class="text-center mt-8">
-            <p class="text-gray-500">&copy; 2023 Мебельный Магазин. Все права защищены.</p>
         </div>
     </footer>
 
