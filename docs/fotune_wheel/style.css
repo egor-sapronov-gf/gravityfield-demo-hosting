@@ -1,24 +1,21 @@
-
 .gf-mechanic {
-  font-family: 'Arial', sans-serif;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-.gf-step, .gf-result {
+.gf-step {
   transition: opacity 0.3s ease-in-out;
 }
 
-.hidden {
-  display: none;
+.gf-step.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.gf-option {
-  cursor: pointer;
-}
-
-.gf-option:hover {
-  background-color: #e2e8f0;
-}
-
-.gf-email-input {
-  border: 1px solid #cbd5e0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

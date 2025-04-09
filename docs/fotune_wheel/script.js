@@ -1,42 +1,48 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const steps = document.querySelectorAll('.gf-step');
-  const result = document.querySelector('.gf-result');
-  const nextStepButton = document.querySelector('.gf-next-step');
+  const quiz = document.getElementById('product-quiz');
+  const closeQuiz = document.getElementById('close-quiz');
+  const startQuiz = document.getElementById('start-quiz');
   const options = document.querySelectorAll('.gf-option');
-  const submitButton = document.querySelector('.gf-submit');
+  const getResults = document.getElementById('get-results');
+  const steps = document.querySelectorAll('.gf-step');
   let currentStep = 0;
 
   function showStep(stepIndex) {
     steps.forEach((step, index) => {
       step.classList.toggle('hidden', index !== stepIndex);
     });
+    currentStep = stepIndex;
   }
 
-  nextStepButton.addEventListener('click', function () {
-    currentStep++;
-    showStep(currentStep);
-  });
+  function nextStep() {
+    if (currentStep < steps.length - 1) {
+      showStep(currentStep + 1);
+    }
+  }
+
+  startQuiz.addEventListener('click', nextStep);
 
   options.forEach(option => {
-    option.addEventListener('click', function () {
-      currentStep++;
-      if (currentStep < steps.length) {
-        showStep(currentStep);
-      } else {
-        result.classList.remove('hidden');
-        steps[currentStep - 1].classList.add('hidden');
-      }
-    });
+    option.addEventListener('click', nextStep);
   });
 
-  submitButton.addEventListener('click', function () {
-    const emailInput = document.querySelector('.gf-email-input');
-    if (emailInput.value) {
-      alert('Спасибо! Мы отправили вам результаты на ' + emailInput.value);
+  getResults.addEventListener('click', function () {
+    const email = document.getElementById('email-input').value;
+    if (email) {
+      alert('Спасибо! Результаты отправлены на ваш e-mail.');
+      quiz.classList.add('hidden');
     } else {
       alert('Пожалуйста, введите ваш e-mail.');
     }
   });
 
-  showStep(currentStep);
+  closeQuiz.addEventListener('click', function () {
+    quiz.classList.add('hidden');
+  });
+
+  // Trigger to open the quiz (for demonstration purposes)
+  document.querySelector('button#open-quiz').addEventListener('click', function () {
+    quiz.classList.remove('hidden');
+    showStep(0);
+  });
 });
