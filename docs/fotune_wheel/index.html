@@ -1,100 +1,27 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Интернет-магазин подарков и сувениров</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body class="bg-gray-100 text-gray-800">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gravity Growth Agent | AI для управления ростом eCommerce</title>
+    <meta name="description" content="AI, который управляет ростом как опытная продуктовая команда. Умный анализ поведения пользователей и автоматическое внедрение механик роста." />
+    <meta name="author" content="Lovable" />
 
-    <!-- Шапка -->
-    <header class="bg-white shadow-lg">
-        <div class="container mx-auto flex justify-between items-center py-4 px-6">
-            <div class="text-2xl font-bold text-red-500">🎁 Подарки & Сувениры</div>
-            <nav class="flex space-x-4">
-                <a href="#" class="text-gray-700 hover:text-red-500 transition">Главная</a>
-                <a href="#" class="text-gray-700 hover:text-red-500 transition">Каталог</a>
-                <a href="#" class="text-gray-700 hover:text-red-500 transition">Контакты</a>
-            </nav>
-        </div>
-    </header>
+    <meta property="og:title" content="gravity-growth-spark" />
+    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
-    <!-- Товарные секции -->
-    <main class="container mx-auto py-8 px-6">
-        <section class="mb-12">
-            <h2 class="text-xl font-bold mb-4">Популярные подарки</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <img src="https://source.unsplash.com/600x400/?gift" alt="Подарочный набор" class="rounded-lg object-cover mb-4">
-                    <h3 class="font-bold text-lg">Подарочный набор</h3>
-                    <p class="text-gray-600">Идеальный подарок для любого случая.</p>
-                    <span class="text-red-500 font-bold">1500 руб.</span>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <img src="https://source.unsplash.com/600x400/?souvenir" alt="Сувенирная кружка" class="rounded-lg object-cover mb-4">
-                    <h3 class="font-bold text-lg">Сувенирная кружка</h3>
-                    <p class="text-gray-600">Кружка с уникальным дизайном.</p>
-                    <span class="text-red-500 font-bold">700 руб.</span>
-                </div>
-                <div class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <img src="https://source.unsplash.com/600x400/?chocolate" alt="Шоколадный набор" class="rounded-lg object-cover mb-4">
-                    <h3 class="font-bold text-lg">Шоколадный набор</h3>
-                    <p class="text-gray-600">Для сладкоежек и гурманов.</p>
-                    <span class="text-red-500 font-bold">1200 руб.</span>
-                </div>
-            </div>
-        </section>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lovable_dev" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <script type="module" crossorigin src="/assets/index-CjeE_91o.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BKDd3Nw3.css">
+  </head>
 
-        <!-- Баннер -->
-        <section class="mb-12">
-            <div class="bg-cover bg-center rounded-lg shadow-lg p-8 text-white" style="background-image: url('https://source.unsplash.com/1200x400/?celebration');">
-                <h2 class="text-2xl font-bold mb-4">Сделайте праздник незабываемым!</h2>
-                <p class="mb-4">Выберите идеальный подарок для ваших близких.</p>
-                <button class="bg-red-500 hover:bg-red-600 transition text-white font-bold py-2 px-4 rounded">Купить сейчас</button>
-            </div>
-        </section>
-
-        <!-- МЕХАНИКА: сюда вставится новогодний адвент календарь как встроенный виджет -->
-        <div class="gf-mechanic bg-white shadow-lg rounded-lg p-4 max-w-md mx-auto mt-6">
-          <div class="gf-step gf-welcome text-center">
-            <h2 class="text-2xl font-bold mb-2">🎄 Новогодний Адвент Календарь 🎁</h2>
-            <p class="mb-4">Откройте окно и получите подарок или скидку каждый день!</p>
-            <button class="gf-open-day bg-red-500 text-white py-2 px-4 rounded">Открыть окно</button>
-          </div>
-          
-          <div class="gf-step gf-question hidden text-center">
-            <h3 class="text-xl font-semibold mb-2">Выберите число:</h3>
-            <div class="gf-days grid grid-cols-4 gap-2 mb-4">
-              <!-- Дни будут генерироваться динамически -->
-            </div>
-            <button class="gf-submit-day bg-green-500 text-white py-2 px-4 rounded hidden">Подтвердить</button>
-          </div>
-          
-          <div class="gf-step gf-result hidden text-center">
-            <h3 class="text-xl font-semibold mb-2">Ваш подарок:</h3>
-            <p class="gf-gift-description mb-4"></p>
-            <button class="gf-claim-gift bg-blue-500 text-white py-2 px-4 rounded">Получить подарок</button>
-          </div>
-        </div>
-
-    </main>
-
-    <!-- Футер -->
-    <footer class="bg-white shadow-lg mt-12">
-        <div class="container mx-auto py-6 px-6 flex flex-col md:flex-row justify-between items-center">
-            <div class="text-gray-700">
-                <p>© 2023 Подарки & Сувениры</p>
-                <p>Все права защищены</p>
-            </div>
-            <div class="flex space-x-4">
-                <a href="#" class="text-gray-700 hover:text-red-500 transition">Политика конфиденциальности</a>
-                <a href="#" class="text-gray-700 hover:text-red-500 transition">Условия использования</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+  <body>
+    <div id="root"></div>
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </body>
 </html>
